@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tab UI</title>
+    <style>
+        html{
+            box-sizing: border-box;
+        }
+       
+        .content-wrapper{
+            position: relative;
+            top: -20px;
+            border: 1px red solid;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        li{
+            list-style-type: none;
+            max-width: 50px;
+            border: 1px red solid;
+            margin: 5px 10px;
+            padding: 10px;
+            border-bottom: none
+        }
+
+
+        .select{
+            display: block;
+            background-color: coral;
+        }
+
+        
+        .hidden{
+            display: none
+        }
+
+    </style>
+</head>
+<body>
+
+        <ul class='tabs-container'>
+            <li data-tabname="1" class="item">Tab1</li>
+            <li data-tabname="2" class="item">Tab2</li>
+            <li data-tabname="3" class="item">Tab3</li>
+        </ul>
+
+    <div class="content-wrapper">
+        <div data-tabContent="1" class="content select" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum sint consectetur repellat. Molestiae, tempore ducimus ex, facere quisquam natus doloribus earum quis, quasi quas dicta voluptas sunt? Illo, hic excepturi.</div>
+        <div data-tabContent="2" class="content hidden">Second Content</div>
+        <div data-tabContent="3" class="content hidden">Third Content</div>
+    </div>
+
+
+    <script>
+    const  tabs = document.querySelectorAll('[data-tabname]');
+    const  tabContent = document.querySelectorAll('[data-tabcontent]');
+
+        // const apples = ["gala", "honey", "whaterver"]
+        // apples.forEach( (apple,i) => console.log(apple,i))
+
+
+    tabs.forEach((tab) =>{tab.addEventListener('click', (e)=>{
+        console.log(e)
+        number = tab.getAttribute('data-tabname')
+        console.log(number)
+
+        tabContent.forEach( content => {
+            contentnumber=content.getAttribute('data-tabContent')
+            console.log(content)
+
+            if (number === contentnumber){
+                content.classList.add('select');
+                content.classList.remove('hidden');
+            } else{
+                content.classList.add('hidden')
+                content.classList.remove('select')
+            }
+        })
+})});
+
+
+    // tabs.forEach((tab) => {tab.classList.add('select');});
+        
+    // tabs[0].addEventListener('click', ()=>{
+    //     tabContent[0].classList.toggle('hidden');
+    //     console.log('click')
+    //     });
+
+
+
+//console.log(tabs.addEventListener('click'))
+   
+
+    
+
+    
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+:root {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    width: 97vw;
+    margin: 0 auto;
+}
+
+.form-container {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+.form-container input {
+    font-size: inherit;
+    width: 85px;
+}
+
+.box-container {
+    position: relative;
+    height: 400px;
+    width: 600px;
+    border: 1px solid red;;
+    margin-top: 60px;
+    overflow: hidden;
+    
+}
+
+.box {
+    height: 50px;
+    width: 50px;
+    border: 1px solid rgba(50,50,50,.8);
+    box-shadow: 2px 2px 3px rgba(0,0,0,.5);
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    background-color: #bad;
+    transition: all 800ms
+}
